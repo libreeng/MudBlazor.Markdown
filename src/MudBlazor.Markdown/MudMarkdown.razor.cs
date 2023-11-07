@@ -446,6 +446,11 @@ public class MudMarkdown : ComponentBase, IDisposable
 					case ParagraphBlock x:
 					{
 						builder.OpenElement(ElementIndex++, "li");
+						if (TextColor != null)
+						{
+							string color = TextColor.Value.ToString().ToLower();
+                            builder.AddAttribute(ElementIndex++, "class", $"mud-{color}-text");
+						}
 						RenderParagraphBlock(x, builder, ParagraphTypo ?? Typo.body1);
 						builder.CloseElement();
 						break;

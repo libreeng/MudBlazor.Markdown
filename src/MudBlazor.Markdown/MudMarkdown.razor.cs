@@ -38,7 +38,42 @@ public class MudMarkdown : ComponentBase, IDisposable
 	public MudMarkdownProps Props { get; set; } = new();
 
 	/// <summary>
-	/// Override default styling of the markdown components.
+	/// Theme of the code block.<br/>
+	/// Browse available themes here: https://highlightjs.org/static/demo/
+	/// </summary>
+	[Parameter]
+	public CodeBlockTheme CodeBlockTheme { get; set; }
+
+	/// <summary>
+	/// Override the original URL address of the <see cref="LinkInline"/>.<br/>
+	/// If a function is not provided <see cref="LinkInline.Url"/> is used
+	/// </summary>
+	[Parameter]
+	public Func<LinkInline, string?>? OverrideLinkUrl { get; set; }
+
+	/// <summary>
+	/// Typography variant to use for Heading Level 1-6.<br/>
+	/// If a function is not provided a default typo for each level is set (e.g. for &lt;h1&gt; it will be <see cref="Typo.h1"/>, etc.)
+	/// </summary>
+	[Parameter]
+	public Func<Typo, Typo>? OverrideHeaderTypo { get; set; }
+
+	/// <summary>
+    /// Typography variant to use for paragrapgh text.<br/>
+    /// If a function is not provided it will use Typo.body1
+    /// </summary>
+    [Parameter]
+    public Typo? ParagraphTypo { get; set; }
+
+    /// <summary>
+    /// Color to use for all text.<br/>
+    /// If a color is not provided it will use the default.
+    /// </summary>
+    [Parameter]
+    public Color? TextColor { get; set; }
+
+    /// <summary>
+	/// Override default styling of the markdown component
 	/// </summary>
 	[Parameter]
 	public MudMarkdownStyling Styling { get; set; } = new();
@@ -178,7 +213,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 			{
 				case ParagraphBlock paragraph:
 				{
-					RenderParagraphBlock(builder, ref elementIndex, paragraph);
+					RenderParagraphBlock(builder, ref elementIndex, paragraph, ParagraphTypo ?? Typo.body1);
 					break;
 				}
 				case HeadingBlock heading:
@@ -264,6 +299,10 @@ public class MudMarkdown : ComponentBase, IDisposable
 			builder1.AddAttribute(elementIndex1++, AttributeNames.Id, id);
 
 		builder1.AddComponentParameter(elementIndex1++, nameof(MudText.Typo), typo);
+		if (TextColor != null)
+		{
+			builder1.AddAttribute(elementIndex++, nameof(MudText.Color), TextColor);
+		}
 		builder1.AddComponentParameter(elementIndex1++, nameof(MudText.Class), @class);
 		builder1.AddComponentParameter(elementIndex1++, nameof(MudText.ChildContent), (RenderFragment)(builder2 =>
 		{
@@ -483,7 +522,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 				builder.AddAttribute(elementIndex++, AttributeNames.Style, $"min-width:{minWidth}px");
 
 			if (cell.Count != 0 && cell[0] is ParagraphBlock paragraphBlock)
-				RenderParagraphBlock(builder, ref elementIndex, paragraphBlock);
+				RenderParagraphBlock(builder, ref elementIndex, paragraphBlock, ParagraphTypo ?? Typo.body1);
 
 			builder.CloseElement();
 		}
@@ -522,7 +561,12 @@ public class MudMarkdown : ComponentBase, IDisposable
 					}
 					case ParagraphBlock x:
 					{
-						RenderParagraphBlock(builder, ref elementIndex, x);
+						if (TextColor != null)
+						{
+							string color = TextColor.Value.ToString().ToLower();
+                            builder.AddAttribute(ElementIndex++, "class", $"mud-{color}-text");
+						}
+						RenderParagraphBlock(builder, ref elementIndex, x, ParagraphTypo ?? Typo.body1);
 						break;
 					}
 					case FencedCodeBlock x:

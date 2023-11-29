@@ -209,11 +209,12 @@ public class MudMarkdown : ComponentBase, IDisposable
 	{
 		for (var i = 0; i < container.Count; i++)
 		{
-			switch (container[i])
+			bool addBottomMargin = i != (container.Count - 1);
+            switch (container[i])
 			{
 				case ParagraphBlock paragraph:
 				{
-					RenderParagraphBlock(builder, ref elementIndex, paragraph, ParagraphTypo ?? Typo.body1);
+					RenderParagraphBlock(builder, ref elementIndex, paragraph, ParagraphTypo ?? Typo.body1, addBottomMargin: addBottomMargin);
 					break;
 				}
 				case HeadingBlock heading:
@@ -226,7 +227,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 
 					typo = Props.Heading.OverrideTypo?.Invoke(typo) ?? typo;
 					var @class = isAppended == true ? "mud-markdown-toc-heading" : null;
-					RenderParagraphBlock(builder, ref elementIndex, heading, typo, headingContent?.Id, @class);
+					RenderParagraphBlock(builder, ref elementIndex, heading, typo, headingContent?.Id, @class, addBottomMargin: addBottomMargin);
 
 					break;
 				}
@@ -244,7 +245,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 				}
 				case ListBlock list:
 				{
-					RenderList(builder, ref elementIndex, list);
+					RenderList(builder, ref elementIndex, list, addBottomMargin);
 					break;
 				}
 				case ThematicBreakBlock:
@@ -288,7 +289,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 	{
 	}
 
-	protected virtual void RenderParagraphBlock(RenderTreeBuilder builder1, ref int elementIndex1, LeafBlock paragraph, Typo typo = Typo.body1, string? id = null, string? @class = null)
+	protected virtual void RenderParagraphBlock(RenderTreeBuilder builder1, ref int elementIndex1, LeafBlock paragraph, Typo typo = Typo.body1, string? id = null, string? @class = null, bool addBottomMargin = true)
 	{
 		if (paragraph.Inline == null)
 			return;
@@ -310,6 +311,11 @@ public class MudMarkdown : ComponentBase, IDisposable
 			RenderInlines(builder2, ref elementIndex2, paragraph.Inline);
 		}));
 		builder1.CloseComponent();
+		if (addBottomMargin)
+		{
+			builder1.OpenElement(ElementIndex++, "br");
+			builder1.CloseElement();
+		}
 	}
 
 	protected virtual void RenderInlines(RenderTreeBuilder builder1, ref int elementIndex1, ContainerInline inlines)
@@ -530,7 +536,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 		builder.CloseElement();
 	}
 
-	protected virtual void RenderList(RenderTreeBuilder builder, ref int elementIndex, ListBlock list)
+	protected virtual void RenderList(RenderTreeBuilder builder, ref int elementIndex, ListBlock list, bool addBottomMargin = true)
 	{
 		if (list.Count == 0)
 			return;
@@ -566,7 +572,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 							string color = TextColor.Value.ToString().ToLower();
                             builder.AddAttribute(ElementIndex++, "class", $"mud-{color}-text");
 						}
-						RenderParagraphBlock(builder, ref elementIndex, x, ParagraphTypo ?? Typo.body1);
+						RenderParagraphBlock(builder, ref elementIndex, x, ParagraphTypo ?? Typo.body1, addBottomMargin: false);
 						break;
 					}
 					case FencedCodeBlock x:
@@ -592,7 +598,12 @@ public class MudMarkdown : ComponentBase, IDisposable
 		}
 
 		builder.CloseElement();
-	}
+        if (addBottomMargin)
+        {
+            builder.OpenElement(ElementIndex++, "br");
+            builder.CloseElement();
+        }
+    }
 
 	/// <summary>
 	/// Renders a markdown block which is not covered by the switch-case block in <see cref="RenderList"/> 

@@ -7,11 +7,11 @@
 		<RootNamespace>MudBlazor</RootNamespace>
 		<Version>1.0.202</Version>
 		<Authors>MyNihongo</Authors>
-		<Description>Markdown component for MudBlazor (https://mudblazor.com/)</Description>
+		<Description>Librestream fork of Markdown component for MudBlazor (https://mudblazor.com/)</Description>
 		<Copyright>Copyright © 2025 MyNihongo</Copyright>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<RepositoryUrl>https://github.com/MyNihongo/MudBlazor.Markdown</RepositoryUrl>
-		<PackageProjectUrl>https://mudblazor.com/</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/libreeng/MudBlazor.Markdown</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/libreeng/MudBlazor.Markdown</PackageProjectUrl>
 		<PackageIcon>favico.png</PackageIcon>
 		<PackageTags>mudblazor, blazor, markdown</PackageTags>
 		<GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>

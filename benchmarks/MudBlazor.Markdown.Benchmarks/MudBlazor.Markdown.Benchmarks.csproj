@@ -9,6 +9,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.15.2" />
+		<PackageReference Include="MudBlazor" Version="8.11.0" />
 	</ItemGroup>
 
 	<ItemGroup>

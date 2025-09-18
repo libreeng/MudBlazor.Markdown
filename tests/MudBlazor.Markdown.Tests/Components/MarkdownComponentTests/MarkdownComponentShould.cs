@@ -101,6 +101,7 @@ public sealed class MarkdownComponentShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class='mud-markdown-body'>
 				<p class='mud-typography mud-typography-body1'>line1</p>
+				<br/>
 				<p class='mud-typography mud-typography-body1'>line2</p>
 			</article>
 			""";
@@ -299,6 +300,7 @@ public sealed class MarkdownComponentShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class='mud-markdown-body'>
 				<p class='mud-typography mud-typography-body1'>some text before</p>
+				<br/>
 				<ul>
 					<li><p class='mud-typography mud-typography-body1'><code>item1</code>- text <b>bold</b></p></li>
 					<li><p class='mud-typography mud-typography-body1'><code>item2</code> - text <i>italic</i></p></li>
@@ -326,6 +328,7 @@ public sealed class MarkdownComponentShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class='mud-markdown-body'>
 				<p class='mud-typography mud-typography-body1'>some text before</p>
+				<br/>
 				<ul>
 					<li><p class='mud-typography mud-typography-body1'><code>item1</code> - text <i>italic</i></p>
 						<ul>
@@ -359,6 +362,7 @@ public sealed class MarkdownComponentShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class='mud-markdown-body'>
 				<p class='mud-typography mud-typography-body1'>some text before</p>
+				<br/>
 				<ul>
 					<li>
 						<p class='mud-typography mud-typography-body1'><code>item1</code> - text <i>italic</i></p>
@@ -428,6 +432,7 @@ public sealed class MarkdownComponentShould : MarkdownComponentTestsBase
 				<ol>
 					<li><p class='mud-typography mud-typography-body1'>Connect to your MySQL server using a MySQL client, such as the <code>mysql</code> command-line tool:</p></li>
 				</ol>
+				<br/>
 				<div class='hljs mud-markdown-code-highlight'>
 					<button blazor:onclick='1' type='button' class='mud-button-root mud-icon-button mud-button mud-button-filled mud-button-filled-primary mud-button-filled-size-medium mud-ripple mud-markdown-code-highlight-copybtn ma-2' blazor:onclick:stopPropagation blazor:elementReference='eb8fdbba-2335-4a91-b2ed-492ac862178c'>
 						<span class='mud-icon-button-label'>
@@ -612,6 +617,7 @@ public sealed class MarkdownComponentShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class='mud-markdown-body'>
 				<p class='mud-typography mud-typography-body1'>first line</p>
+				<br/>
 				<hr class='mud-divider mud-divider-fullwidth'/>
 				<p class='mud-typography mud-typography-body1'>second line</p>
 			</article>

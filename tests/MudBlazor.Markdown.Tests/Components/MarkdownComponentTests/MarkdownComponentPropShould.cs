@@ -21,6 +21,7 @@ public sealed class MarkdownComponentPropShould : MarkdownComponentTestsBase
 			 	<{expectedTag} id='some-text' class='mud-typography mud-typography-{expectedTag}'>
 			 		some text
 			 	</{expectedTag}>
+			 	<br/>
 			 </article>
 			 """;
 
@@ -57,6 +58,7 @@ public sealed class MarkdownComponentPropShould : MarkdownComponentTestsBase
 			 	<{expectedTag} id='some-text' class='mud-typography mud-typography-{expectedTag}'>
 			 		some text
 			 	</{expectedTag}>
+			 	<br/>
 			 </article>
 			 """;
 
@@ -93,6 +95,7 @@ public sealed class MarkdownComponentPropShould : MarkdownComponentTestsBase
 			 	<{expectedTag} id='some-text' class='mud-typography mud-typography-{expectedTag}'>
 			 		some text
 			 	</{expectedTag}>
+			 	<br/>
 			 </article>
 			 """;
 
@@ -129,6 +132,7 @@ public sealed class MarkdownComponentPropShould : MarkdownComponentTestsBase
 			 	<{expectedTag} id='some-text' class='mud-typography mud-typography-{expectedTag}'>
 			 		some text
 			 	</{expectedTag}>
+			 	<br/>
 			 </article>
 			 """;
 
@@ -165,6 +169,7 @@ public sealed class MarkdownComponentPropShould : MarkdownComponentTestsBase
 			 	<{expectedTag} id='some-text' class='mud-typography mud-typography-{expectedTag}'>
 			 		some text
 			 	</{expectedTag}>
+			 	<br/>
 			 </article>
 			 """;
 
@@ -201,6 +206,7 @@ public sealed class MarkdownComponentPropShould : MarkdownComponentTestsBase
 			 	<{expectedTag} id='some-text' class='mud-typography mud-typography-{expectedTag}'>
 			 		some text
 			 	</{expectedTag}>
+			 	<br/>
 			 </article>
 			 """;
 

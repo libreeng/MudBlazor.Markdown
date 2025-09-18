@@ -11,14 +11,17 @@ public abstract class MarkdownComponentTestsBase : ComponentTestsBase
 		string? value,
 		Optional<MudMarkdownProps> props = default, Optional<MudMarkdownStyling> styling = default,
 		Optional<MarkdownPipeline?> markdownPipeline = default, Optional<MarkdownSourceType> sourceType = default,
-		Optional<bool> hasTableOfContents = default, Optional<string?> tableOfContentsHeader = default)
+        Optional<Typo?> paragraphTypo = default, Optional<Color?> textColor = default,
+        Optional<bool> hasTableOfContents = default, Optional<string?> tableOfContentsHeader = default)
 	{
 		MockNavigationManager.Initialize(Uri);
 
 		return Ctx.RenderComponent<MudMarkdown>(@params =>
 			@params.Add(static x => x.Value, value!)
 				.TryAdd(static x => x.Props, props)
-				.TryAdd(static x => x.Styling, styling)
+                .TryAdd(static x => x.ParagraphTypo, paragraphTypo)
+                .TryAdd(static x => x.TextColor, textColor)
+                .TryAdd(static x => x.Styling, styling)
 				.TryAdd(static x => x.MarkdownPipeline, markdownPipeline)
 				.TryAdd(static x => x.SourceType, sourceType)
 				.TryAdd(static x => x.HasTableOfContents, hasTableOfContents)

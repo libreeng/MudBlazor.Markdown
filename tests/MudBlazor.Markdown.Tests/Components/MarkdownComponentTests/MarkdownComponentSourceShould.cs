@@ -12,7 +12,9 @@ public sealed class MarkdownComponentSourceShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class="mud-markdown-body">
 				<h1 id="main-events" class="mud-typography mud-typography-h1">Main events</h1>
+				<br/>
 				<p class="mud-typography mud-typography-body1">Sakura season in Kawaguchi</p>
+				<br/>
 			</article>
 			""";
 
@@ -35,6 +37,7 @@ public sealed class MarkdownComponentSourceShould : MarkdownComponentTestsBase
 			$"""
 			 <article id:ignore class="mud-markdown-body">
 			 	<p class="mud-typography mud-typography-body1">Error while reading from file, path=<code>Resources{Path.DirectorySeparatorChar}i dont exist.md</code>, error=<code>Could not find file 'path'.</code></p>
+			 	<br/>
 			 	<div class="hljs mud-markdown-code-highlight">
 			 		<button  type="button" class="mud-button-root mud-icon-button mud-button mud-button-filled mud-button-filled-primary mud-button-filled-size-medium mud-ripple mud-markdown-code-highlight-copybtn ma-2"  >
 			 			<span class="mud-icon-button-label">
@@ -67,7 +70,9 @@ public sealed class MarkdownComponentSourceShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class="mud-markdown-body">
 				<h1 id="main-events" class="mud-typography mud-typography-h1">Main events</h1>
+				<br/>
 				<p class="mud-typography mud-typography-body1">Sakura season in Kawaguchi</p>
+				<br/>
 			</article>
 			""";
 
@@ -89,7 +94,8 @@ public sealed class MarkdownComponentSourceShould : MarkdownComponentTestsBase
 		const string expected =
 			"""
 			<article id:ignore class="mud-markdown-body">
-				<p class="mud-typography mud-typography-body1">Error while reading from URL, URL=<code>invalid url</code>, error=<code>An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.</code>
+				<p class="mud-typography mud-typography-body1">Error while reading from URL, URL=<code>invalid url</code>, error=<code>An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.</code></p>
+				<br/>
 				<div class="hljs mud-markdown-code-highlight">
 					<button  type="button" class="mud-button-root mud-icon-button mud-button mud-button-filled mud-button-filled-primary mud-button-filled-size-medium mud-ripple mud-markdown-code-highlight-copybtn ma-2"  >
 						<span class="mud-icon-button-label">

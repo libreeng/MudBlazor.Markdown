@@ -15,12 +15,13 @@ public sealed class MarkdownComponentHeadersShould : MarkdownComponentTestsBase
 
 		var expected =
 			$"""
-			 <article id:ignore class='mud-markdown-body'>
-			 	<{expectedTag} id='some-text' class='mud-typography mud-typography-{expectedTag}'>
-			 		some text
-			 	</{expectedTag}>
-			 </article>
-			 """;
+			<article id:ignore class='mud-markdown-body'>
+				<{expectedTag} id='some-text' class='mud-typography mud-typography-{expectedTag}'>
+					some text
+				</{expectedTag}>
+				<br/>
+			</article>
+			""";
 
 		using var fixture = CreateFixture(value);
 		fixture.MarkupMatches(expected);

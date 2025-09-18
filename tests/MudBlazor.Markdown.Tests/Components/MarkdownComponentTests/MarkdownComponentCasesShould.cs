@@ -20,6 +20,7 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class='mud-markdown-body'>
 				<p class='mud-typography mud-typography-body1'>text before</p>
+				<br/>
 				<div class='mud-table mud-simple-table mud-table-bordered mud-table-striped mud-elevation-1' style='overflow-x: auto;'>
 					<div class='mud-table-container'>
 						<table>
@@ -256,7 +257,9 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class='mud-markdown-body'>
 				<h1 id='heading-1' class='mud-typography mud-typography-h1'>Heading 1</h1>
+				<br/>
 				<p class='mud-typography mud-typography-body1'>Some text.</p>
+				<br/>
 				<div class='hljs mud-markdown-code-highlight'>
 					<button blazor:onclick='1' type='button' class='mud-button-root mud-icon-button mud-button mud-button-filled mud-button-filled-primary mud-button-filled-size-medium mud-ripple mud-markdown-code-highlight-copybtn ma-2' blazor:onclick:stopPropagation blazor:elementReference='4debd876-7ce0-4871-af9c-ba021f368d3c'>
 						<span class='mud-icon-button-label'>
@@ -269,7 +272,9 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 					<pre><code class='hljs language-csharp' blazor:elementReference='b2623f71-2ea0-4dd1-94e4-8c03cd62b266'></code></pre>
 				</div>
 				<h2 id='another-headline-1' class='mud-typography mud-typography-h2'>Another headline 1</h2>
+				<br/>
 				<h2 id='another-headline-2' class='mud-typography mud-typography-h2'>Another headline 2</h2>
+				<br/>
 			</article>
 			""";
 
@@ -312,7 +317,9 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 					<li><p class='mud-typography mud-typography-body1'>List item 2</p></li>
 					<li><p class='mud-typography mud-typography-body1'>List item 3</p></li>
 				</ul>
+				<br/>
 				<h2 id='another-headline' class='mud-typography mud-typography-h2'>Another headline</h2>
+				<br/>
 			</article>
 			""";
 
@@ -393,11 +400,12 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 			""";
 
 		const string expected =
-			"""
+            """
 			<article id:ignore class='mud-markdown-body'>
 				<h2 id='the-following-requirements-must-be-met-outside-this-terraform-code-in-advance.' class='mud-typography mud-typography-h2'>
 					The following requirements must be met outside this Terraform code in advance.
 				</h2>
+				<br/>
 				<ol>
 					<li><p class='mud-typography mud-typography-body1'>Created a new resource group..</p></li>
 					<li><p class='mud-typography mud-typography-body1'>Created a new AAD group using naming convention..</p></li>
@@ -405,6 +413,7 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 					<li><p class='mud-typography mud-typography-body1'>Created a separate storage account..</p></li>
 					<li><p class='mud-typography mud-typography-body1'>Created a new app registration..</p></li>
 				</ol>
+				<br/>
 				<div class='mud-table mud-simple-table mud-table-bordered mud-table-striped mud-elevation-1' style='overflow-x: auto;'>
 					<div class='mud-table-container'>
 						<table>
@@ -463,11 +472,13 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 				<ul>
 					<li><p class='mud-typography mud-typography-body1'>Granted permissions User.Invite.All and GroupMember.ReadWrite.All. Admin consent has been granted</p></li>
 				</ul>
+				<br/>
 				<ol start='6'>
 					<li><p class='mud-typography mud-typography-body1'>Create a new app registration..</p></li>
 					<li><p class='mud-typography mud-typography-body1'>Created the key vault..</p></li>
 					<li><p class='mud-typography mud-typography-body1'>Created secrets..</p></li>
 				</ol>
+				<br/>
 			</article>
 			""";
 
@@ -506,7 +517,9 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class='mud-markdown-body'>
 				<p class='mud-typography mud-typography-body1'>To prevent the warning message regarding the deprecation of the <code>mysql_native_password</code> plugin from being logged, you have a couple of options:</p>
+				<br/>
 				<p class='mud-typography mud-typography-body1'>Option 1: Update User Authentication Method:</p>
+				<br/>
 				<ol>
 					<li>
 						<p class='mud-typography mud-typography-body1'>Connect to your MySQL server using a MySQL client, such as the <code>mysql</code> command-line tool:</p>
@@ -570,6 +583,7 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 			"""
 			<article id:ignore class='mud-markdown-body'>
 				<h3 id='my-table%3A' class='mud-typography mud-typography-h3'>My Table:</h3>
+				<br/>
 				<p class='mud-typography mud-typography-body1'>
 					<div class='mud-markdown-error'>
 						| **Column 1** | **Column 2**   | **Column 3**                |
@@ -582,6 +596,7 @@ public sealed class MarkdownComponentCasesShould : MarkdownComponentTestsBase
 						|              |                | ```          |
 					</div>
 				</p>
+				<br/>
 			</article>
 			""";
 

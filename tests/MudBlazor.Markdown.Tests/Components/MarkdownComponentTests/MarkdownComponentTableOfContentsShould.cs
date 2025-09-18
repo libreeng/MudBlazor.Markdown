@@ -94,21 +94,37 @@ public sealed class MarkdownComponentTableOfContentsShould : MarkdownComponentTe
 				<div class="mud-markdown-toc-content open">
 					<article id:ignore class="mud-markdown-body">
 						<h1 id="heading-1" class="mud-typography mud-typography-h1 mud-markdown-toc-heading">heading 1</h1>
+						<br/>
 						<p class="mud-typography mud-typography-body1">aaa</p>
+						<br/>
 						<h2 id="heading-2" class="mud-typography mud-typography-h2 mud-markdown-toc-heading">heading 2</h2>
+						<br/>
 						<p class="mud-typography mud-typography-body1">bbb</p>
+						<br/>
 						<h3 id="heading-3" class="mud-typography mud-typography-h3 mud-markdown-toc-heading">heading 3</h3>
+						<br/>
 						<p class="mud-typography mud-typography-body1">ccc</p>
+						<br/>
 						<h4 id="heading-4" class="mud-typography mud-typography-h4">heading 4</h4>
+						<br/>
 						<p class="mud-typography mud-typography-body1">ddd</p>
+						<br/>
 						<h3 id="heading-5" class="mud-typography mud-typography-h3 mud-markdown-toc-heading">heading 5</h3>
+						<br/>
 						<p class="mud-typography mud-typography-body1">eee</p>
+						<br/>
 						<h2 id="heading-6" class="mud-typography mud-typography-h2 mud-markdown-toc-heading">heading 6</h2>
+						<br/>
 						<p class="mud-typography mud-typography-body1">fff</p>
+						<br/>
 						<h3 id="heading-7" class="mud-typography mud-typography-h3 mud-markdown-toc-heading">heading 7</h3>
+						<br/>
 						<p class="mud-typography mud-typography-body1">ggg</p>
+						<br/>
 						<h1 id="heading-8" class="mud-typography mud-typography-h1 mud-markdown-toc-heading">heading 8</h1>
+						<br/>
 						<p class="mud-typography mud-typography-body1">hhh</p>
+						<br/>
 					</article>
 				</div>
 			</div>
@@ -172,8 +188,11 @@ public sealed class MarkdownComponentTableOfContentsShould : MarkdownComponentTe
 				<div class="mud-markdown-toc-content open">
 					<article id:ignore class="mud-markdown-body">
 						<h1 id="heading-1" class="mud-typography mud-typography-h1 mud-markdown-toc-heading">heading 1</h1>
+						<br/>
 						<h2 id="heading-2" class="mud-typography mud-typography-h2 mud-markdown-toc-heading">heading 2</h2>
+						<br/>
 						<h3 id="heading-3" class="mud-typography mud-typography-h3 mud-markdown-toc-heading">heading 3</h3>
+						<br/>
 					</article>
 				</div>
 			</div>

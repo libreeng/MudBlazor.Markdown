@@ -302,7 +302,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 		builder1.AddComponentParameter(elementIndex1++, nameof(MudText.Typo), typo);
 		if (TextColor != null)
 		{
-			builder1.AddAttribute(elementIndex++, nameof(MudText.Color), TextColor);
+			builder1.AddAttribute(elementIndex1++, nameof(MudText.Color), TextColor);
 		}
 		builder1.AddComponentParameter(elementIndex1++, nameof(MudText.Class), @class);
 		builder1.AddComponentParameter(elementIndex1++, nameof(MudText.ChildContent), (RenderFragment)(builder2 =>
@@ -313,7 +313,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 		builder1.CloseComponent();
 		if (addBottomMargin)
 		{
-			builder1.OpenElement(ElementIndex++, "br");
+			builder1.OpenElement(elementIndex1++, "br");
 			builder1.CloseElement();
 		}
 	}
@@ -388,7 +388,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 					else if (Props.Link.Command == null)
 					{
 						builder1.OpenComponent<MudLink>(elementIndex1++);
-						builder1.AddComponentParameter(elementIndex++, nameof(MudLink.Typo), ParagraphTypo ?? Typo.body1);
+						builder1.AddComponentParameter(elementIndex1++, nameof(MudLink.Typo), ParagraphTypo ?? Typo.body1);
 						builder1.AddComponentParameter(elementIndex1++, nameof(MudLink.Href), url);
 						builder1.AddComponentParameter(elementIndex1++, nameof(MudLink.Underline), Styling.Link.Underline);
 						builder1.AddComponentParameter(elementIndex1++, nameof(MudLink.ChildContent), (RenderFragment)(builder2 =>
@@ -428,7 +428,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 					else
 					{
 						builder1.OpenComponent<MudLinkButton>(elementIndex1++);
-						builder1.AddComponentParameter(elementIndex++, nameof(MudLinkButton.Typo), ParagraphTypo ?? Typo.body1);
+						builder1.AddComponentParameter(elementIndex1++, nameof(MudLinkButton.Typo), ParagraphTypo ?? Typo.body1);
 						builder1.AddComponentParameter(elementIndex1++, nameof(MudLinkButton.Command), Props.Link.Command);
 						builder1.AddComponentParameter(elementIndex1++, nameof(MudLinkButton.CommandParameter), url);
 						builder1.AddComponentParameter(elementIndex1++, nameof(MudLinkButton.ChildContent), (RenderFragment)(builder2 =>
@@ -530,7 +530,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 				builder.AddAttribute(elementIndex++, AttributeNames.Style, $"min-width:{minWidth}px");
 
 			if (cell.Count != 0 && cell[0] is ParagraphBlock paragraphBlock)
-				RenderParagraphBlock(builder, ref elementIndex, paragraphBlock, ParagraphTypo ?? Typo.body1);
+				RenderParagraphBlock(builder, ref elementIndex, paragraphBlock, ParagraphTypo ?? Typo.body1, addBottomMargin: false);
 
 			builder.CloseElement();
 		}
@@ -564,7 +564,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 				{
 					case ListBlock x:
 					{
-						RenderList(builder, ref elementIndex, x);
+						RenderList(builder, ref elementIndex, x, addBottomMargin: false);
 						break;
 					}
 					case ParagraphBlock x:
@@ -572,7 +572,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 						if (TextColor != null)
 						{
 							string color = TextColor.Value.ToString().ToLower();
-                            builder.AddAttribute(ElementIndex++, "class", $"mud-{color}-text");
+                            builder.AddAttribute(elementIndex++, "class", $"mud-{color}-text");
 						}
 						RenderParagraphBlock(builder, ref elementIndex, x, ParagraphTypo ?? Typo.body1, addBottomMargin: false);
 						break;
@@ -602,7 +602,7 @@ public class MudMarkdown : ComponentBase, IDisposable
 		builder.CloseElement();
         if (addBottomMargin)
         {
-            builder.OpenElement(ElementIndex++, "br");
+            builder.OpenElement(elementIndex++, "br");
             builder.CloseElement();
         }
     }

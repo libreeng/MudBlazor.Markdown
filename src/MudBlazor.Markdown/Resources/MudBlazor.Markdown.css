@@ -55,8 +55,8 @@ pre code.hljs {
 }
 
 /* Table */
-.mud-markdown-body table {
-	margin: 1.25em 0;
+.mud-markdown-body .mud-table {
+	margin: 0 0 1.25em 0;
 }
 
 .mud-markdown-body table p {
@@ -183,4 +183,13 @@ pre code.hljs {
 .mud-markdown-toc-nav-menu .mud-nav-item.active {
 	border-left-color: var(--mud-palette-primary) !important;
 	color: var(--mud-palette-primary) !important;
+}
+
+/* Details */
+.mud-markdown-body .mud-expand-panel-header {
+	padding: 16px 12px !important;
+}
+
+.mud-markdown-body .mud-expand-panel-content {
+	padding: 0 12px 16px 12px !important;
 }
